@@ -1,0 +1,411 @@
+% This file was created with JabRef 2.10.
+% Encoding: UTF-8
+
+
+@MastersThesis{ADANIYA2012,
+  Title                    = {DETECÇÃO DE ANOMALIAS UTILIZANDO FIREFLY HARMONIC CLUSTERING ALGORITHM E ASSINATURA DIGITAL DE SEGMENTO DE REDE},
+  Author                   = {MARIO HENRIQUE A. C. ADANIYA},
+  School                   = {UNIVERSIDADE ESTADUAL DE LONDRINA},
+  Year                     = {2012},
+
+  __markedentry            = {[bruno:5]},
+  Keywords                 = {Detecção de anomalia. DSNS. Firefly algorithm. K-Harmonic means. K-
+means.},
+  Owner                    = {bruno},
+  Timestamp                = {2016.03.24}
+}
+
+@Article{DBLP:journals/comsur/BhuyanBK14,
+  Title                    = {Network Anomaly Detection: Methods, Systems and Tools},
+  Author                   = {Monowar H. Bhuyan and
+ D. K. Bhattacharyya and
+ Jugal K. Kalita},
+  Journal                  = {{IEEE} Communications Surveys and Tutorials},
+  Year                     = {2014},
+  Number                   = {1},
+  Pages                    = {303--336},
+  Volume                   = {16},
+
+  __markedentry            = {[bruno:5]},
+  Bibsource                = {dblp computer science bibliography, http://dblp.org},
+  Biburl                   = {http://dblp.uni-trier.de/rec/bib/journals/comsur/BhuyanBK14},
+  Doi                      = {10.1109/SURV.2013.052213.00046},
+  Owner                    = {bruno},
+  Timestamp                = {Tue, 25 Feb 2014 14:45:50 +0100},
+  Url                      = {http://dx.doi.org/10.1109/SURV.2013.052213.00046}
+}
+
+@InProceedings{Eriksson:2010:BMN:1879141.1879200,
+  Title                    = {BasisDetect: A Model-based Network Event Detection Framework},
+  Author                   = {Eriksson, Brian and Barford, Paul and Bowden, Rhys and Duffield, Nick and Sommers, Joel and Roughan, Matthew},
+  Booktitle                = {Proceedings of the 10th ACM SIGCOMM Conference on Internet Measurement},
+  Year                     = {2010},
+
+  Address                  = {New York, NY, USA},
+  Pages                    = {451--464},
+  Publisher                = {ACM},
+  Series                   = {IMC '10},
+
+  __markedentry            = {[bruno:5]},
+  Acmid                    = {1879200},
+  Doi                      = {10.1145/1879141.1879200},
+  ISBN                     = {978-1-4503-0483-2},
+  Keywords                 = {anomaly detection},
+  Location                 = {Melbourne, Australia},
+  Numpages                 = {14},
+  Owner                    = {bruno},
+  Timestamp                = {2016.03.24},
+  Url                      = {http://doi.acm.org/10.1145/1879141.1879200}
+}
+
+@InProceedings{Han:2012:CNT:2355578.2357402,
+  Title                    = {A Class of Non-statistical Traffic Anomaly Detection in Complex Network Systems},
+  Author                   = {Han, Wenlin and Xiong, Wei and Xiao, Yang and Ellabidy, Magdy and Vasilakos, Athanasios V. and Xiong, Naixue},
+  Booktitle                = {Proceedings of the 2012 32Nd International Conference on Distributed Computing Systems Workshops},
+  Year                     = {2012},
+
+  Address                  = {Washington, DC, USA},
+  Pages                    = {640--646},
+  Publisher                = {IEEE Computer Society},
+  Series                   = {ICDCSW '12},
+
+  __markedentry            = {[bruno:5]},
+  Acmid                    = {2357402},
+  Doi                      = {10.1109/ICDCSW.2012.7},
+  ISBN                     = {978-0-7695-4686-5},
+  Keywords                 = {Anomaly detection, Network traffic, Order parameter, Synergetic neural networks},
+  Numpages                 = {7},
+  Owner                    = {bruno},
+  Timestamp                = {2016.03.24},
+  Url                      = {http://dx.doi.org/10.1109/ICDCSW.2012.7}
+}
+
+@Article{Hoque:2014:RNA:2608850.2608953,
+  Title                    = {Review: Network Attacks: Taxonomy, Tools and Systems},
+  Author                   = {Hoque, N. and Bhuyan, Monowar H. and Baishya, R. C. and Bhattacharyya, D. K. and Kalita, J. K.},
+  Journal                  = {J. Netw. Comput. Appl.},
+  Year                     = {2014},
+
+  Month                    = apr,
+  Pages                    = {307--324},
+  Volume                   = {40},
+
+  __markedentry            = {[bruno:5]},
+  Acmid                    = {2608953},
+  Address                  = {London, UK, UK},
+  Doi                      = {10.1016/j.jnca.2013.08.001},
+  ISSN                     = {1084-8045},
+  Issue_date               = {April, 2014},
+  Keywords                 = {DoS, Network attacks, Protocol, Systems, Tools},
+  Numpages                 = {18},
+  Owner                    = {bruno},
+  Publisher                = {Academic Press Ltd.},
+  Timestamp                = {2016.03.24},
+  Url                      = {http://dx.doi.org/10.1016/j.jnca.2013.08.001}
+}
+
+@Article{Iglesias:2015:ANT:2830192.2830260,
+  Title                    = {Analysis of Network Traffic Features for Anomaly Detection},
+  Author                   = {Iglesias, F{\'e}lix and Zseby, Tanja},
+  Journal                  = {Mach. Learn.},
+  Year                     = {2015},
+
+  Month                    = oct,
+  Number                   = {1-3},
+  Pages                    = {59--84},
+  Volume                   = {101},
+
+  __markedentry            = {[bruno:5]},
+  Acmid                    = {2830260},
+  Address                  = {Hingham, MA, USA},
+  Doi                      = {10.1007/s10994-014-5473-9},
+  ISSN                     = {0885-6125},
+  Issue_date               = {October 2015},
+  Keywords                 = {Anomaly detection, Data preprocessing, Feature selection, Network security, Supervised classification},
+  Numpages                 = {26},
+  Owner                    = {bruno},
+  Publisher                = {Kluwer Academic Publishers},
+  Timestamp                = {2016.03.24},
+  Url                      = {http://dx.doi.org/10.1007/s10994-014-5473-9}
+}
+
+@InProceedings{Jiang:2011:FNT:2114497.2115810,
+  Title                    = {Fast Network Traffic Anomaly Detection Based on Iteration},
+  Author                   = {Jiang, Hua and Pang, Liaojun},
+  Booktitle                = {Proceedings of the 2011 Seventh International Conference on Computational Intelligence and Security},
+  Year                     = {2011},
+
+  Address                  = {Washington, DC, USA},
+  Pages                    = {1006--1010},
+  Publisher                = {IEEE Computer Society},
+  Series                   = {CIS '11},
+
+  __markedentry            = {[bruno:5]},
+  Acmid                    = {2115810},
+  Doi                      = {10.1109/CIS.2011.225},
+  ISBN                     = {978-0-7695-4584-4},
+  Keywords                 = {Anomaly detection, Network traffic, Fast, Self-similar, Hurst parameter},
+  Numpages                 = {5},
+  Owner                    = {bruno},
+  Timestamp                = {2016.03.24},
+  Url                      = {http://dx.doi.org/10.1109/CIS.2011.225}
+}
+
+@PhdThesis{Jr.2005,
+  Title                    = {Baseline Aplicado a Gerência de Redes},
+  Author                   = {Mario Lemes Proença Jr.},
+  School                   = {Universidade Estadual de Campinas},
+  Year                     = {2005},
+
+  __markedentry            = {[bruno:5]},
+  Keywords                 = {Gerência de Redes, Baseline, Alarmes, Caracterização de Tráfego},
+  Owner                    = {bruno},
+  Timestamp                = {2016.03.24}
+}
+
+@InProceedings{Kline:2008:TAD:1381303.1381920,
+  Title                    = {Traffic Anomaly Detection at Fine Time Scales with Bayes Nets},
+  Author                   = {Kline, Jeff and Nam, Sangnam and Barford, Paul and Plonka, David and Ron, Amos},
+  Booktitle                = {Proceedings of the 2008 The Third International Conference on Internet Monitoring and Protection},
+  Year                     = {2008},
+
+  Address                  = {Washington, DC, USA},
+  Pages                    = {37--46},
+  Publisher                = {IEEE Computer Society},
+  Series                   = {ICIMP '08},
+
+  __markedentry            = {[bruno:5]},
+  Acmid                    = {1381920},
+  Doi                      = {10.1109/ICIMP.2008.33},
+  ISBN                     = {978-0-7695-3189-2},
+  Keywords                 = {anomaly detection},
+  Numpages                 = {10},
+  Owner                    = {bruno},
+  Timestamp                = {2016.03.24},
+  Url                      = {http://dx.doi.org/10.1109/ICIMP.2008.33}
+}
+
+@InProceedings{Lakhina:2004:DNT:1015467.1015492,
+  Title                    = {Diagnosing Network-wide Traffic Anomalies},
+  Author                   = {Lakhina, Anukool and Crovella, Mark and Diot, Christophe},
+  Booktitle                = {Proceedings of the 2004 Conference on Applications, Technologies, Architectures, and Protocols for Computer Communications},
+  Year                     = {2004},
+
+  Address                  = {New York, NY, USA},
+  Pages                    = {219--230},
+  Publisher                = {ACM},
+  Series                   = {SIGCOMM '04},
+
+  __markedentry            = {[bruno:5]},
+  Acmid                    = {1015492},
+  Doi                      = {10.1145/1015467.1015492},
+  ISBN                     = {1-58113-862-8},
+  Keywords                 = {anomaly detection, network traffic analysis},
+  Location                 = {Portland, Oregon, USA},
+  Numpages                 = {12},
+  Owner                    = {bruno},
+  Timestamp                = {2016.03.24},
+  Url                      = {http://doi.acm.org/10.1145/1015467.1015492}
+}
+
+@Article{Li:2008:LWS:1456731.1457120,
+  Title                    = {A Lightweight Web Server Anomaly Detection Method Based on Transductive Scheme and Genetic Algorithms},
+  Author                   = {Li, Yang and Guo, Li and Tian, Zhi-Hong and Lu, Tian-Bo},
+  Journal                  = {Comput. Commun.},
+  Year                     = {2008},
+
+  Month                    = nov,
+  Number                   = {17},
+  Pages                    = {4018--4025},
+  Volume                   = {31},
+
+  __markedentry            = {[bruno:5]},
+  Acmid                    = {1457120},
+  Address                  = {Amsterdam, The Netherlands, The Netherlands},
+  Doi                      = {10.1016/j.comcom.2008.08.009},
+  ISSN                     = {0140-3664},
+  Issue_date               = {November, 2008},
+  Keywords                 = {Genetic algorithm, Network security, TCM-KNN algorithm, Web server anomaly detection},
+  Numpages                 = {8},
+  Owner                    = {bruno},
+  Publisher                = {Elsevier Science Publishers B. V.},
+  Timestamp                = {2016.03.24},
+  Url                      = {http://dx.doi.org/10.1016/j.comcom.2008.08.009}
+}
+
+@InProceedings{Lim:2008:NAD:1437894.1438273,
+  Title                    = {Network Anomaly Detection System: The State of Art of Network Behaviour Analysis},
+  Author                   = {Lim, Shu Yun and Jones, Andy},
+  Booktitle                = {Proceedings of the 2008 International Conference on Convergence and Hybrid Information Technology},
+  Year                     = {2008},
+
+  Address                  = {Washington, DC, USA},
+  Pages                    = {459--465},
+  Publisher                = {IEEE Computer Society},
+  Series                   = {ICHIT '08},
+
+  __markedentry            = {[bruno:5]},
+  Acmid                    = {1438273},
+  Doi                      = {10.1109/ICHIT.2008.249},
+  ISBN                     = {978-0-7695-3328-5},
+  Keywords                 = {anomaly detection, network behaviour analysis, network intrusion detection},
+  Numpages                 = {7},
+  Owner                    = {bruno},
+  Timestamp                = {2016.03.24},
+  Url                      = {http://dx.doi.org/10.1109/ICHIT.2008.249}
+}
+
+@Article{Mazel:2015:HAD:2885221.2885224,
+  Title                    = {Hunting Attacks in the Dark: Clustering and Correlation Analysis for Unsupervised Anomaly Detection},
+  Author                   = {Mazel, Johan and Casas, Pedro and Fontugne, Romain and Fukuda, Kensuke and Owezarski, Philippe},
+  Journal                  = {Netw.},
+  Year                     = {2015},
+
+  Month                    = sep,
+  Number                   = {5},
+  Pages                    = {283--305},
+  Volume                   = {25},
+
+  __markedentry            = {[bruno:5]},
+  Acmid                    = {2885224},
+  Address                  = {New York, NY, USA},
+  Doi                      = {10.1002/nem.1903},
+  ISSN                     = {0028-3045},
+  Issue_date               = {September 2015},
+  Keywords                 = {unsupervised anomaly detection \& characterization, clustering, outliers detection, anomaly correlation, filtering rules, MAWILab},
+  Numpages                 = {23},
+  Owner                    = {bruno},
+  Publisher                = {Wiley-Interscience},
+  Timestamp                = {2016.03.24},
+  Url                      = {http://dx.doi.org/10.1002/nem.1903}
+}
+
+@PhdThesis{MOURA2009,
+  Title                    = {Detecção de Anomalias em Redes WAN usando Estimativa de Holt-Winters Aplicada a Medidas de Entropia},
+  Author                   = {MOURA, AS},
+  School                   = {UNIVERSIDADE FEDERAL DO ESTADO DO RIO DE JANEIRO},
+  Year                     = {2009},
+
+  __markedentry            = {[bruno:5]},
+  Keywords                 = {Sistemas distribuídos; redes de computadores; segurança da
+informação; gerência de redes; detecção de anomalias.},
+  Owner                    = {bruno},
+  Timestamp                = {2016.03.24}
+}
+
+@InProceedings{Nychis:2008:EEE:1452520.1452539,
+  Title                    = {An Empirical Evaluation of Entropy-based Traffic Anomaly Detection},
+  Author                   = {Nychis, George and Sekar, Vyas and Andersen, David G. and Kim, Hyong and Zhang, Hui},
+  Booktitle                = {Proceedings of the 8th ACM SIGCOMM Conference on Internet Measurement},
+  Year                     = {2008},
+
+  Address                  = {New York, NY, USA},
+  Pages                    = {151--156},
+  Publisher                = {ACM},
+  Series                   = {IMC '08},
+
+  __markedentry            = {[bruno:5]},
+  Acmid                    = {1452539},
+  Doi                      = {10.1145/1452520.1452539},
+  ISBN                     = {978-1-60558-334-1},
+  Keywords                 = {anomaly detection, entropy},
+  Location                 = {Vouliagmeni, Greece},
+  Numpages                 = {6},
+  Owner                    = {bruno},
+  Timestamp                = {2016.03.24},
+  Url                      = {http://doi.acm.org/10.1145/1452520.1452539}
+}
+
+@InProceedings{Sekar:2002:SAD:586110.586146,
+  Title                    = {Specification-based Anomaly Detection: A New Approach for Detecting Network Intrusions},
+  Author                   = {Sekar, R. and Gupta, A. and Frullo, J. and Shanbhag, T. and Tiwari, A. and Yang, H. and Zhou, S.},
+  Booktitle                = {Proceedings of the 9th ACM Conference on Computer and Communications Security},
+  Year                     = {2002},
+
+  Address                  = {New York, NY, USA},
+  Pages                    = {265--274},
+  Publisher                = {ACM},
+  Series                   = {CCS '02},
+
+  __markedentry            = {[bruno:5]},
+  Acmid                    = {586146},
+  Doi                      = {10.1145/586110.586146},
+  ISBN                     = {1-58113-612-9},
+  Keywords                 = {anomaly detection, intrusion detection, network monitoring},
+  Location                 = {Washington, DC, USA},
+  Numpages                 = {10},
+  Owner                    = {bruno},
+  Timestamp                = {2016.03.24},
+  Url                      = {http://doi.acm.org/10.1145/586110.586146}
+}
+
+@InProceedings{Wan:2008:LAD:1487207.1487370,
+  Title                    = {Link-Based Anomaly Detection in Communication Networks},
+  Author                   = {Wan, Xiaomeng and Milios, Evangelos and Kalyaniwalla, Nauzer and Janssen, Jeannette},
+  Booktitle                = {Proceedings of the 2008 IEEE/WIC/ACM International Conference on Web Intelligence and Intelligent Agent Technology - Volume 03},
+  Year                     = {2008},
+
+  Address                  = {Washington, DC, USA},
+  Pages                    = {402--405},
+  Publisher                = {IEEE Computer Society},
+  Series                   = {WI-IAT '08},
+
+  __markedentry            = {[bruno:5]},
+  Acmid                    = {1487370},
+  Doi                      = {10.1109/WIIAT.2008.91},
+  ISBN                     = {978-0-7695-3496-1},
+  Keywords                 = {anomaly detection, communication network},
+  Numpages                 = {4},
+  Owner                    = {bruno},
+  Timestamp                = {2016.03.24},
+  Url                      = {http://dx.doi.org/10.1109/WIIAT.2008.91}
+}
+
+@InProceedings{Wang:2009:NAD:1685165.1685188,
+  Title                    = {Network Anomaly Detection Based on Traffic Prediction},
+  Author                   = {Wang, Fengyu and Gong, Bin and Hu, Yi and Zhang, Ningbo},
+  Booktitle                = {Proceedings of the 2009 International Conference on Scalable Computing and Communications; Eighth International Conference on Embedded Computing},
+  Year                     = {2009},
+
+  Address                  = {Washington, DC, USA},
+  Pages                    = {449--454},
+  Publisher                = {IEEE Computer Society},
+  Series                   = {SCALCOM-EMBEDDEDCOM '09},
+
+  __markedentry            = {[bruno:5]},
+  Acmid                    = {1685188},
+  Doi                      = {10.1109/EmbeddedCom-ScalCom.2009.86},
+  ISBN                     = {978-0-7695-3825-9},
+  Keywords                 = {anomaly detection, network traffic prediction, wavelet transform},
+  Numpages                 = {6},
+  Owner                    = {bruno},
+  Timestamp                = {2016.03.24},
+  Url                      = {http://dx.doi.org/10.1109/EmbeddedCom-ScalCom.2009.86}
+}
+
+@PhdThesis{Zarpelao2010,
+  Title                    = {Detecção de Anomalias em Redes de Computadores},
+  Author                   = {Bruno Bogaz Zarpelão},
+  School                   = {Universidade Estadual de Campinas},
+  Year                     = {2010},
+
+  __markedentry            = {[bruno:5]},
+  Keywords                 = {Redes de computação, Gerência, Anomalias, Alarmes, Sistemas
+de segurança, Telecomunicações,Tráfego.},
+  Owner                    = {bruno},
+  Timestamp                = {2016.03.24}
+}
+
+@Article{Zarpelao2009,
+  Title                    = {Detecção de anomalias em redes de computadores},
+  Author                   = {Zarpelão, Bruno Bogaz and Mendes, Leonardo S and Abr{\~a}o, Taufik and Sampaio, Lucas DH and Lima, Moises F and Proen{\c{c}}a Jr, Mario L},
+  Journal                  = {SIMPÓSIO BRASILEIRO DE TELECOMUNICAÇÕES, XXVII. Anais},
+  Year                     = {2009},
+  Pages                    = {5},
+
+  __markedentry            = {[bruno:5]},
+  Keywords                 = {Anomalies, GBA, Baseline, Alarms.},
+  Owner                    = {bruno},
+  Timestamp                = {2016.03.24}
+}
+
