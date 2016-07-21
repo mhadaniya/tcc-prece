@@ -1,0 +1,11 @@
+# BibTeX
+*.bbl
+*.blg
+*.brf
+
+# LaTeX temporary files
+*.aux
+*.log
+*.toc
+*.lof
+*.lot
