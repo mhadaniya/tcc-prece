@@ -3,12 +3,12 @@
 
 \DeclareUnicodeCharacter{00A0}{ }
 
-% Caso queira usar um diretório diferente pra imagem, tire o comentário da proxima linha
-% \graphicspath{ {/home/hug/MonografeArq/}}
-\titulo{Estudo de técnicas de agrupamento em detecção de anomalias em redes de computadores.\\
-\fontsize{12}{14}\selectfont{Clustering techniques for detecting anomalies in computer networks}
-\autor{Bruno Prece da Silva\thanks{Centro Universitário Filadélfia de Londrina - UniFil}
-\\Mario Henrique Akihiko da Costa Adaniya.\thanks{Centro Universitário Filadélfia de Londrina - UniFil}}
+\titulo{ESTUDO DE TÉCNICAS DE AGRUPAMENTO EM DETECÇÃO DE ANOMALIAS EM REDES DE COMPUTADORES.\\
+\fontsize{12}{14}\selectfont CLUSTERING TECHNIQUES FOR DETECTING ANOMALIES IN COMPUTER NETWORKS}
+\autor{\fontsize{10}{14}\selectfont \textit{Bruno Prece da Silva\thanks{Centro Universitário Filadélfia de Londrina - UniFil}\\
+bprece@gmail.com
+\\Mario Henrique Akihiko da Costa Adaniya\thanks{Centro Universitário Filadélfia de Londrina - UniFil}\\
+mario.adaniya@unifil.br}}
 \instituicao{Centro Universitário Filadélfia}
 \local{Londrina}
 \predate{}
@@ -49,17 +49,17 @@
 A detecção de anomalias em redes é uma área de pesquisa muito dinâmica, que envolve diversas técnicas para detectar anomalias conhecidas e desconhecidas. Diversos sistemas e algoritmos são propostos e há muitas discussões referentes à eficácia de cada método na literatura. Este artigo apresenta alguns aspectos da detecção de anomalias, e discute em particular as técnicas de agrupamento. Um estudo de caso utilizando a base de dados do KDD99 e o algoritmo K-means é apresentado.\\
 \vspace{\onelineskip} \\
 \noindent
-\textbf{Palavras-chave}: Detecção de Anomalias; Clustering; Segurança da Informação.
+\textbf{Palavras-chave}: Detecção de Anomalias; Clustering; K-means.
 
 
 
 \section*{Abstract}
 \begin{otherlanguage*}{english}
 %resumo em ingles%
-The detection of anomalies in networks is an area of very dynamic research that involves various techniques to detect known and unknown anomalies. Several systems and algorithms are proposed and there are many discussions concerning the effectiveness of each method in the literature. This paper presents some aspects of anomaly detection, in addition, presents a case study using a simple and effective algorithm for grouping data..\\
+The detection of anomalies in networks is an area of very dynamic research that involves various techniques to detect known and unknown anomalies. Several systems and algorithms are proposed and there are many discussions concerning the effectiveness of each method in the literature. This article presents some aspects of anomaly detection, and discusses in particular the clustering techniques. A case study using the KDD99 database and K-means algorithm is presented.\\
 \vspace{\onelineskip}\\
 \noindent
-\textbf{Keywords}: Anomaly Detection; Clustering; Infomation Security.
+\textbf{Keywords}: Anomaly Detection; Clustering; K-means.
 \end{otherlanguage*}
 
 %texto%
@@ -73,18 +73,24 @@ A constante expansão na utilização da Internet tornou a rede um serviço esse
 
 \section*{DETECÇÃO DE ANOMALIAS}
 
-No tráfego de rede, as anomalias representam ações que se diferem do comportamento normal que já foi analisado. Mesmo quando uma anomalia não impacta profundamente a rede, ela atinge a qualidade dos serviços que são entregues aos usuários finais \cite{Lakhina2004}. O comportamento anômalo pode ser gerado por eventos de origem maliciosa, como, por exemplo, ataques de negação de serviço, varredura de portas e ataques de penetração. Além de eventos não maliciosos, como, aumentos repentinos no volume do tráfego, tempestades de \textit{broadcast} e congestionamentos.
+No tráfego de rede, as anomalias representam ações que se diferem do comportamento normal da rede. Mesmo quando uma anomalia não impacta profundamente a rede, ela atinge a qualidade dos serviços que são entregues aos usuários finais \cite{Lakhina2004}. O comportamento anômalo pode ser gerado por eventos de origem maliciosa, como, por exemplo, ataques de negação de serviço, varredura de portas e ataques de penetração. Além de eventos não maliciosos, como, aumentos repentinos no volume do tráfego, tempestades de \textit{broadcast} e congestionamentos.
 
-As principais vertentes de pesquisas dividem as técnicas de detecção de anomalias em duas categorias, a detecção baseada em assinaturas de anomalias que se destaca em relação à detecção de anomalias já conhecidas, e a detecção baseada na caracterização do comportamento normal da rede que possui um melhor desempenho na detecção de anomalias desconhecidas. Os sistemas de detecção são classificados de acordo com as assinaturas utilizadas na detecção. Sistemas supervisionados utilizam as duas classes de assinaturas, diferente dos sistemas semi-supervisionados, que fazem uso apenas da assinatura do perfil normal do tráfego. Ainda existem os sistemas não supervisionados que não utilizam assinaturas, sendo mais fáceis de serem aplicados na rede, porém, com maior dificuldade de implementação \cite{chandola2009}.
+As principais vertentes de pesquisas dividem as técnicas de detecção de anomalias em duas categorias, a detecção baseada em assinaturas de anomalias que se destaca em relação à detecção de anomalias já conhecidas, e a detecção baseada na caracterização do comportamento normal da rede, que possui um melhor desempenho na detecção de anomalias desconhecidas. Os sistemas de detecção são classificados de acordo com as assinaturas utilizadas na detecção. Sistemas supervisionados utilizam as duas classes de assinaturas, diferente dos sistemas semi-supervisionados, que fazem uso apenas da assinatura do perfil normal do tráfego e os sistemas não supervisionados que não utilizam assinaturas, sendo mais fáceis de serem aplicados na rede, porém, com maior dificuldade de implementação \cite{chandola2009}.
 
 Vários métodos e algoritmos são utilizados nas pesquisas e nos sistemas para detecção de anomalias. Dentre estas técnicas, a clusterização de dados é muito explorada e possui bons resultados. A clusterização consiste no particionamento e agrupamento de um conjunto de dados, de tal forma que os objetos que compartilhem características comuns e que se diferem de outros cluster sejam alocados em um mesmo grupo, assim, as técnicas de clustering precisam encontrar automaticamente a assinatura dos dados, ou seja, as características mais relevantes de cada grupo \cite{rehman2009}.
 
 \section*{METODOLOGIA EXPERIMENTAL}
 
-Para a elaboração deste trabalho foi utilizado o  K-means, um algoritmo simples e muito poderoso para clusterização de dados. A técnica divide um conjunto de \textit{n} elementos em um número \textit{K} de clusters, de um modo que a similaridade entre os elementos de um mesmo grupo seja alta e a similaridade entre os grupos seja baixa.
+Para a elaboração deste trabalho foi utilizado o \textit{K-means}, um algoritmo simples e muito poderoso para clusterização de dados. A técnica divide um conjunto de \textit{n} elementos em um número \textit{k} de clusters, de um modo que a similaridade entre os elementos de um mesmo grupo seja alta e a similaridade entre os grupos seja baixa. O algoritmo consiste primeiramente na escolha de \textit{k} objetos centrais definidos por parâmetro. Assim, cada ponto de dado é atribuído ao seu objeto central mais próximo, formando os grupos. Os centróides de cada cluster são atualizados de acordo com a média de similaridade dos objetos dos grupos, atualizando a média dos clusters a cada iteração. Assim, o algoritmo cria grupos de dados normais e grupos de anomalias.
 
-O algoritmo consiste primeiramente na escolha de \textit{K} objetos centrais, onde \textit{K}\textit{} é a quantidade de clusters definidos por parâmetro. Assim, cada ponto de dado é atribuído ao seu centroide (objeto central) mais próximo, formando os grupos. Os centroides de cada cluster são atualizados de acordo com a média de similaridade dos objetos inseridos nos grupos, atualizando a média dos clusters a cada iteração. A atribuição de objetos nos clusters e a atualização das médias é realizada até que nenhum objeto seja inserido no cluster, e até que todos os centroides permaneçam os mesmos. Desta forma, o algoritmo realiza a clusterização de uma base de dados, agrupando os dados referentes ao comportamento normal do tráfego em um grupo e os dados referentes às anomalias serão agrupados em outros clusters de acordo com a característica de cada anomalia.
+A base de dados KDDcup99 é um dos conjuntos de dados mais utilizados para avaliação de sistemas de detecção de anomalia e detecção de intrusões. A base contém aproximadamente cinco milhões de vetores de conexões, que são compostos por 41 atributos referentes aos recursos utilizados em cada conexão.
 
+De maneira padrão, o algoritmo \textit{K-means} utilizado primeiramente aplica o algoritmo \textit{K-means++} \cite{arthur2007} para a escolha dos centros iniciais. Porém, este método se mostrou ineficaz neste caso, devido à proximidade entre os centros que se concentravam apenas no primeiro terço dos vetores de conexões, assim, o algoritmo não identificava os vários grupos de anomalias. Após a utilização de centróides iniciais que fossem distribuídos por toda base, o algoritmo passou a subdividir o grupo de anomalias em vários grupos de acordo com a característica de cada anomalia, evidenciando a eficácia do mesmo para detecção de anomalias.
+
+\section*{CONCLUSÃO}
+Neste artigo, foram apresentados aspectos gerais da área de detecção de anomalias e de algoritmos de agrupamento, que se mostraram capazes de realizar o agrupamento de extensas bases de dados de redes, realizando a divisão entre o tráfego normal e o tráfego anômalo.
+
+Esta metodologia mostra-se simples e eficiente, contendo diversas possibilidades de extensões e combinações com outras técnicas que podem refinar o agrupamento, gerando dados altamente precisos e com custo computacional baixo.
 
 \end{Spacing}
 \postextual
