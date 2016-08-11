@@ -20,3 +20,5 @@ clean:
 	rm -rf ${filename}.toc
 	rm -rf ${filename}.brf
 	rm -rf ${filename}.out.ps
+	rm -rf referencias.bib.aux
+	rm -rf references.bib.bak
