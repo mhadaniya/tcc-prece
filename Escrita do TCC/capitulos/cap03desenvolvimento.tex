@@ -2,22 +2,78 @@
 
   \section{Bases de Dados}
 
-\indent A base de dados KDDcup99 é um dos conjuntos de dados mais utilizados para avaliação de sistemas de detecção de anomalia e detecção de intrusões. A KDD99 foi elaborada à partir dos dados do tráfego gerado artificialmente no DARPA98, criado pelo Lincoln Laboratory do Instituto Tecnológico de Massachusetts para avaliação de sistemas de detecção de intrusão.
+\indent A base de dados KDDcup99 \cite{kdd99} é um dos conjuntos de dados mais utilizados para avaliação de sistemas de detecção de anomalias e detecção de intrusões. A KDD99 foi elaborada à partir dos dados do tráfego gerado artificialmente no DARPA 98, criado pelo Lincoln Laboratory do Instituto Tecnológico de Massachusetts para avaliação de sistemas de detecção de intrusão.
 
-\indent A base contém aproximadamente cinco milhões de vetores de conexões, que são compostos por 41 atributos referentes aos recursos utilizados em cada conexão. Cada vetor de conexão possui uma rotulagem, que pode ser normal ou de algum determinado ataque. Apesar da incerteza em relação a naturalidade do tráfego gerado artificialmente, este conjunto de dados é utilizado em grande escala na literatura. Além disso, a tarefa de clusterização não é afetada em relação à naturalidade dos dados.
+\indent A base contém aproximadamente quatro milhões e novecentos mil vetores de conexões, que são compostos por 41 atributos referentes aos recursos utilizados em cada conexão. Cada vetor de conexão possui uma rotulagem, que pode ser normal ou de algum determinado ataque. Apesar da incerteza no que se refere à efetividade do tráfego gerado artificialmente, este conjunto de dados é utilizado em grande escala na literatura, além disso, a tarefa de clusterização não sofre influência em relação à origem dos dados.
 
 \begin{table}[h]
 \centering
-\caption{Atributos de cada vetor de conexão}
+\caption{Atributos dos vetores de conexão.}
 \vspace{0.5cm}
 \begin{tabular}{|r|l|r|l|}
 \hline
- Nº & Nome do Atributo & Nº & Nome do Atributo \\
+\textbf{Nº} & \textbf{Nome do Atributo} & \textbf{Nº} & \textbf{Nome do Atributo} \\
 \hline                               
-1 & Duração & 22 & Count \\
-2 & Protocolo & 23 & count \\
-3 & Serviço & 24 & rate\\
-%%continua....
+1 & Duration 	  & 22 & Count \\
+\hline
+2 & Protocol\_type & 23 & Srv\_count \\
+\hline
+3 & Service    	  & 24 & Serror\_rate \\
+\hline
+4 & Flag          & 25 & Srv\_serror\_rate \\
+\hline
+5 & Src\_bytes    & 26 & Error\_rate \\
+\hline
+6 & Dst\_bytes	  & 27 & Srv\_rerror\_rate \\
+\hline
+7 & Land	  & 28 & Same\_srv\_rate \\
+\hline
+8 & Wrong\_fragment & 29 & Diff\_srv\_rate \\
+\hline
+9 & Urgent 	  & 30 & Srv\_diff\_host\_rate \\
+\hline
+10 & Hot 	  & 31 & Dst\_host\_count \\
+\hline
+11 & Num\_failed\_logins & 32 & Dst\_host\_srv\_count \\
+\hline
+12 & Logged\_in   & 33 & Dst\_host\_same\_srv\_count \\
+\hline
+13 & Num\_compromised & 34 & Dst\_host\_diff\_srv\_rate\\
+\hline
+14 & Root\_shell  & 35 & Dst\_host\_same\_src\_port\_rate\\
+\hline
+15 & Su\_attempted & 36 & Dst\_host\_srv\_diff\_host\_rate\\
+\hline
+16 & Num\_root    & 37	& Dst\_host\_serror\_rate\\
+\hline
+17 & Num\_files\_creations & 38 & Dst\_host\_srv\_serror\_rate\\
+\hline
+18 & Num\_shell   & 39 & Dst\_host\_rerror\_rate\\
+\hline
+19 & Num\_acess\_files & 40 & Dst\_host\_srv\_rerror\_rate\\
+\hline
+20 & Num\_outbound\_cmds & 41 & Count\\
+\hline
+21 & Is\_guest\_login & &\\
+\hline
+\end{tabular}
+\end{table}
+
+\begin{table}[h]
+\centering
+\caption{Ataques agrupados por tipo.}
+\vspace{0.5cm}
+\begin{tabular}{|l|l|}
+\hline
+\textbf{Tipos de Ataques} & \textbf{Ataques contidos na KDD99}\\
+\hline
+DoS &	Back, land, neptune, pod, smurf, teardrop \\
+\hline
+R2L &	Ftp\_write, guess\_passwd, imap, multihop, phf,\\ & spy, warezclient, warezmaster \\
+\hline
+U2R &	Buffer\_overflow, load module Pearl, rootkit\\
+\hline
+Probe &	Ip\_sweep, n\_map, port\_sweep, satan\\
 \hline
 \end{tabular}
 \end{table}
