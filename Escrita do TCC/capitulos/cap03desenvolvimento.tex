@@ -4,7 +4,7 @@
 
 \indent A base de dados KDDcup99 \cite{kdd99} é um dos conjuntos de dados mais utilizados para avaliação de sistemas de detecção de anomalias e detecção de intrusões. A KDD99 foi elaborada à partir dos dados do tráfego gerado artificialmente no DARPA 98, criado pelo Lincoln Laboratory do Instituto Tecnológico de Massachusetts para avaliação de sistemas de detecção de intrusão.
 
-\indent A base contém aproximadamente quatro milhões e novecentos mil vetores de conexões, que são compostos por 41 atributos referentes aos recursos utilizados em cada conexão. Cada vetor de conexão possui uma rotulagem, que pode ser normal ou de algum determinado ataque. Apesar da incerteza no que se refere à efetividade do tráfego gerado artificialmente, este conjunto de dados é utilizado em grande escala na literatura, além disso, a tarefa de clusterização não sofre influência em relação à origem dos dados.
+\indent A base contém aproximadamente quatro milhões e novecentos mil vetores de conexões, que são compostos por 42 atributos referentes aos recursos utilizados em cada conexão. Cada vetor de conexão possui uma rotulagem, que pode ser normal ou de algum determinado ataque. Apesar da incerteza no que se refere à efetividade do tráfego gerado artificialmente, este conjunto de dados é utilizado em grande escala na literatura, além disso, a tarefa de clusterização não sofre influência em relação à origem dos dados.
 
 \begin{table}[h]
 \centering
@@ -54,7 +54,7 @@
 \hline
 20 & Num\_outbound\_cmds & 41 & Count\\
 \hline
-21 & Is\_guest\_login & &\\
+21 & Is\_guest\_login & 42 & Attack\_type\\
 \hline
 \end{tabular}
 \end{table}
@@ -78,6 +78,49 @@ Probe &	Ip\_sweep, n\_map, port\_sweep, satan\\
 \end{tabular}
 \end{table}
 
+\indent Na Tabela 1 são apresentados os atributos do vetor de conexão e o significado de cada atributo. Na Tabela 2 todos tipos de ataques presentes na base de dados são categorizados de acordo com o seu tipo. Esta classificação é importante devido às características semelhantes entre os ataques de mesma categoria, que na clusterização pode refletir em grupos que contenham um ou mais ataques da mesma categoria.
+
+\indent No seguinte quadro é possível vizualizar a forma em que a base de dados é disponibilizada. Nota-se que há a presença de valores do tipo literal, inteiro e em ponto flutuante. Por isso, para aplicar o algoritmo de agrupamento na base de dados, se faz necessário realizar uma preparação dos dados. Na fase preparação, exemplificada na Tabela 3, os atributos to tipo literal serão categoriados e seu valores serão substituidos por valores correspondentes do tipo inteiro, para que o algoritmo possa mensurar o valor destes atributos.
+\vspace{0.5cm}
+\mdfsetup{linewidth=.8pt,frametitlealignment=\centering}
+\begin{mdframed}[userdefinedwidth=1.0\textwidth,align=left,frametitle={Vetor de conexão original KDD99}]
+0,tcp,ftp\_data,SF,35195,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,10,10,0.00,0.00,\\
+0.00,0.00,1.00,0.00,0.00,92,44,0.43,0.07,0.43,0.05,0.00,0.00,0.00,0.00,normal.
+\end{mdframed}
+
+\begin{table}[h]
+\centering
+\caption{Categorização dos protocolos de rede.}
+\vspace{0.5cm}
+\begin{tabular}{|l|c|}
+\hline
+\textbf{Protocolo} & \textbf{Valor Categórico}\\
+\hline
+TCP & 1\\
+\hline
+UDP & 2\\
+\hline
+ICMP & 3\\
+\hline
+\end{tabular}
+\end{table}
+
+\indent Após a etapa de classificação, ainda há dados com diferentes escalas, tal como, valores em ponto flutuante e valores inteiros muito altos, como, o valor das portas de origem e destino que podem ultrapassar valores acima de quarenta mil. Em testes empíricos aplicando o K-means na base de dados em que apenas foi realizada a categorização dos dados a clusterização foi realizada normalmente, porém, os resultados não foram os esperados, devido que a unidade de medida dos atributos afetaram a análise.
+
+\indent Para realização destes testes, foi elaborada uma base contendo apenas cinquenta vetores de conexão de tráfego normal e cinquenta vetores de um ataque smurf. Estes dados foram retirados da própria KDD99 e mantiveram a mesma sequência em que estavam alocados na base. Os testes realizados com apenas estes dois grupos, revelaram que os vetores que continham valores muito altos em seus atributos, independente de ser do tipo normal ou smurf, eram alocados em um grupo muito pequeno que continha em média cinco obejtos, enquanto o outro grupo obtinha em média os outros noventa e cinco vetores da base, por isso, faz se necessário realizar a normalização para homogenizar os dados em uma mesma escala de valores.
+
+\indent A normalização por interpolação linear é um meio de normalização muito utilizado, onde, assumimos que o domínio de cada atributo está entre os valores máximos e mínimos do atributo presente na base de dados. A normalização linar irá transformar os valores de cada atributo no intervalo entre 0 e 1 \cite{goldschmidt2005}.
+
+\indent Este modelo de normalização utiliza os valores máximos e mínimos de cada coluna da base da dados. Estes valores serão utilizados para o cálculo do novo valor do atributos. A seguinte formula representa a normalização por interpolação linear:
+
+\vspace{0.3cm}
+\begin{equation}
+\label{eq:Interpolação Linear} %Título da equacao
+atributo[i][j]' = \frac{atributo[i][j] - min[j]}{max[j]- min[j]}
+\end{equation}
+\vspace{0.3cm}
+
+\noindent onde, assumimos que a base de dados é uma matriz em que $ i $ é o índice da linha, $ j $ o índice da coluna, onde, $ min $ representa um vetor contendo o valor mínimo de cada coluna e, $ max $ representa um vetor contendo o valor máximo de cada coluna. O valor normalizado do atributo é representado por $ atributo' $, enquanto o valor inicial é representado por $ atributo $.
 
 
 

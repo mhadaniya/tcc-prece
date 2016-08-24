@@ -103,16 +103,17 @@ Também se faz presente na literatura a rede neural MLP (\textit{Multi-Layer Per
 \indent O K-means é um algoritmo simples e muito poderoso para clusterização de dados, a técnica divide um conjunto de \textit{n} elementos um um número \textit{K} de clusters, de um modo que a similaridade intracluster seja alta, e a similaridade intercluster seja baixa \cite{goldschmidt2005}.
 
 \indent O algoritmo consiste primeiramente na escolha de \textit{K} objetos centrais, onde \textit{K} é a quantidade de clusters definidos por parâmetro. Assim, cada ponto de dado é atribuído ao seu centroide (objeto central) mais próximo, formando os grupos. Os centroides de cada cluster são atualizados de acordo com a média de similaridade dos objetos inseridos nos grupos, atualizando a média dos clusters a cada iteração. A atribuição de objetos nos clusters e a atualização das médias é realizada até que nenhum objeto seja inserido no cluster, e até que todos os centroides permaneçam os mesmos \cite{Tan2005}, uma representação simples do K-means pode ser representada no Algoritmo 1:
+\vspace{0.4cm}
 
 \begin{algorithm}[H]
 \Entrada{Número \textbf{K} de clusters}
 \Saida{Clusters agrupados}
 \Inicio{
- \Repita{}{
+ \Repita{Os centroides se estabilizarem}{
 	  Atribuir cada objeto ao seu centroide mais próximo.
 
 	Atualizar o centroide de cada grupo.
-}Os centroides se estabilizarem
+}
 }
 \caption{\textsc{\textit{K-means} simplificado}}
 \end{algorithm}
