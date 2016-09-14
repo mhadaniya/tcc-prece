@@ -1,6 +1,6 @@
 \chapter{Desenvolvimento}
 
-  \section{Bases de Dados}
+  \section{Base de Dados}
 
 \indent A base de dados KDDcup99 \cite{kdd99} é um dos conjuntos de dados mais utilizados para avaliação de sistemas de detecção de anomalias e detecção de intrusões. A KDD99 foi elaborada à partir dos dados do tráfego gerado artificialmente no DARPA 98, criado pelo Lincoln Laboratory do Instituto Tecnológico de Massachusetts para avaliação de sistemas de detecção de intrusão.
 
@@ -78,15 +78,30 @@ Probe &	Ip\_sweep, n\_map, port\_sweep, satan\\
 \end{tabular}
 \end{table}
 
-\indent Na Tabela 1 são apresentados os atributos do vetor de conexão e o significado de cada atributo. Na Tabela 2 todos tipos de ataques presentes na base de dados são categorizados de acordo com o seu tipo. Esta classificação é importante devido às características semelhantes entre os ataques de mesma categoria, que na clusterização pode refletir em grupos que contenham um ou mais ataques da mesma categoria.
+\indent Na Tabela 1 são apresentados os atributos que compõem cada vetor de conexão e o significado de cada atributo. Na Tabela 2 todos tipos de ataques presentes na base de dados são categorizados de acordo com o seu tipo. Esta classificação é importante devido às características semelhantes entre os ataques de mesma categoria, que na clusterização pode refletir em grupos que contenham um ou mais ataques da mesma categoria.
 
-\indent No seguinte quadro é possível vizualizar a forma em que a base de dados é disponibilizada. Nota-se que há a presença de valores do tipo literal, inteiro e em ponto flutuante. Por isso, para aplicar o algoritmo de agrupamento na base de dados, se faz necessário realizar uma preparação dos dados. Na fase preparação, exemplificada na Tabela 3, os atributos to tipo literal serão categoriados e seu valores serão substituidos por valores correspondentes do tipo inteiro, para que o algoritmo possa mensurar o valor destes atributos.
+\indent É possível visualizar a forma em que a base de dados é disponibilizada na Tabela 3. Nota-se que há a presença de valores do tipo literal, inteiro e real. Por isso, para aplicar o algoritmo de agrupamento, se faz necessário realizar uma preparação dos dados. A categorização dos dados é exemplificada na Tabela 4, onde os atributos to tipo literal terão seus valores substituídos por valores correspondentes do tipo inteiro. Dessa forma, o algoritmo pode mensurar o valor dos atributos.
+
+\begin{table}[h]
+\centering
+\caption{Vetor de conexão pré e pós normalização.}
 \vspace{0.5cm}
-\mdfsetup{linewidth=.8pt,frametitlealignment=\centering}
-\begin{mdframed}[userdefinedwidth=1.0\textwidth,align=left,frametitle={Vetor de conexão original KDD99}]
-0,tcp,ftp\_data,SF,35195,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,10,10,0.00,0.00,\\
-0.00,0.00,1.00,0.00,0.00,92,44,0.43,0.07,0.43,0.05,0.00,0.00,0.00,0.00,normal.
-\end{mdframed}
+\begin{tabular}{|l|l|}
+\hline
+\textbf{Estado} & \textbf{Vetor de conexão}\\
+\hline
+Inicial	 & 0,tcp,http,SF,274,25212,0,0,0,0,0,1,0,0,0,0,0,0,
+	\\ & 0,0,0,0,1,6,0.00,0.00,0.00,0.00,1.00,0.00,0.50,39,
+	\\ & 137,1.00,0.00,0.03,0.01,0.00,0.00,0.00,0.00.\\
+\hline
+Normalizado & 0,0,0,0,0,0.00489,0,0,0,0,0,1,0,0,0,0,0,0,0,0,
+	   \\& 0,0,0.001957,0.011742,0,0,0,0,1,0,0.5,0.152941,
+	   \\& 0.537255,1,0,0.03,0.01,0,0,0,0.\\
+\hline
+
+\end{tabular}
+\end{table}
+
 
 \begin{table}[h]
 \centering
@@ -96,34 +111,92 @@ Probe &	Ip\_sweep, n\_map, port\_sweep, satan\\
 \hline
 \textbf{Protocolo} & \textbf{Valor Categórico}\\
 \hline
-TCP & 1\\
+TCP & 0\\
 \hline
-UDP & 2\\
+UDP & 1\\
 \hline
-ICMP & 3\\
+ICMP & 2\\
 \hline
 \end{tabular}
 \end{table}
 
-\indent Após a etapa de classificação, ainda há dados com diferentes escalas, tal como, valores em ponto flutuante e valores inteiros muito altos, como, o valor das portas de origem e destino que podem ultrapassar valores acima de quarenta mil. Em testes empíricos aplicando o K-means na base de dados em que apenas foi realizada a categorização dos dados a clusterização foi realizada normalmente, porém, os resultados não foram os esperados, devido que a unidade de medida dos atributos afetaram a análise.
+\indent Após a etapa de categorização, ainda há dados com diferentes ordem de grandezas e unidades de medidas diferentes, tal como, valores reais e valores inteiros muito altos, como, o valor das portas de origem e destino que podem ultrapassar quarenta mil. Em testes empíricos aplicando o K-means na base de dados em que apenas foi realizada a categorização dos dados, a clusterização foi realizada normalmente, porém, os resultados não foram os esperados.
 
-\indent Para realização destes testes, foi elaborada uma base contendo apenas cinquenta vetores de conexão de tráfego normal e cinquenta vetores de um ataque smurf. Estes dados foram retirados da própria KDD99 e mantiveram a mesma sequência em que estavam alocados na base. Os testes realizados com apenas estes dois grupos, revelaram que os vetores que continham valores muito altos em seus atributos, independente de ser do tipo normal ou smurf, eram alocados em um grupo muito pequeno que continha em média cinco obejtos, enquanto o outro grupo obtinha em média os outros noventa e cinco vetores da base, por isso, faz se necessário realizar a normalização para homogenizar os dados em uma mesma escala de valores.
+\indent Para realização destes testes, foi elaborada uma base contendo apenas cinquenta vetores de conexão de tráfego normal e cinquenta vetores de um ataque \textit{smurf}. Estes dados foram retirados da própria KDD99 e mantiveram a mesma sequência em que estavam originalmente alocados. Os testes realizados com apenas estes dois grupos, revelaram que os vetores que continham valores muito altos em suas portas de destino, independente de ser do tipo normal ou \textit{smurf}, eram alocados em um grupo muito pequeno que continha em média três objetos. Enquanto o segundo grupo obtinha em média os outros noventa e sete vetores de conexão. Por isso, fez se necessário realizar a normalização para homogenizar os dados em uma mesma escala de valores.
 
-\indent A normalização por interpolação linear é um meio de normalização muito utilizado, onde, assumimos que o domínio de cada atributo está entre os valores máximos e mínimos do atributo presente na base de dados. A normalização linar irá transformar os valores de cada atributo no intervalo entre 0 e 1 \cite{goldschmidt2005}.
+\indent A normalização de dados é um processo que pode ser realizado de diversas maneiras. Neste trabalho foi utilizada a técnica de interpolação linear, onde, assumimos que o domínio de cada atributo está entre os valores máximos e mínimos do atributo presente na base de dados. A normalização linear irá transformar os valores de cada atributo entre [0,1] \cite{goldschmidt2005} \cite{Silva2007}.
 
-\indent Este modelo de normalização utiliza os valores máximos e mínimos de cada coluna da base da dados. Estes valores serão utilizados para o cálculo do novo valor do atributos. A seguinte formula representa a normalização por interpolação linear:
+\indent Este meio de normalização utiliza os valores máximos e mínimos de cada coluna da base da dados, que serão utilizados para o cálculo do novos valores da base. A seguinte equação representa a normalização por interpolação linear:
 
 \vspace{0.3cm}
 \begin{equation}
 \label{eq:Interpolação Linear} %Título da equacao
-atributo[i][j]' = \frac{atributo[i][j] - min[j]}{max[j]- min[j]}
+atributo[i][j]' = \frac{atributo[i][j] - min[j]}{\Delta j}
 \end{equation}
 \vspace{0.3cm}
 
-\noindent onde, assumimos que a base de dados é uma matriz em que $ i $ é o índice da linha, $ j $ o índice da coluna, onde, $ min $ representa um vetor contendo o valor mínimo de cada coluna e, $ max $ representa um vetor contendo o valor máximo de cada coluna. O valor normalizado do atributo é representado por $ atributo' $, enquanto o valor inicial é representado por $ atributo $.
+\noindent onde, assumimos que a base de dados é uma matriz em que $ i $ é o índice da linha, $ j $ o índice da coluna. A variação entre os valores máximos e mínimos é representada por $ \Delta $, onde é composto por $ min $, que representa um vetor contendo o valor mínimo de cada coluna, e por  $ max $, que representa um vetor contendo o valor máximo de cada coluna,
+
+\vspace{0.3cm}
+\begin{equation}
+\label{eq:Valor de Delta} %Título da equacao
+\Delta = max[j] - min[j]
+\end{equation}
+\vspace{0.3cm}
+
+\noindent o valor normalizado do atributo é representado por $ atributo' $, enquanto o valor inicial é representado por $ atributo $. Na Tabela 3 é apresentado um mesmo vetor de conexão antes e após a normalização.
 
 
 
-  \section{Implementação}
+  \section{Clusterização do Tráfego}
 
-  \section{Resultados}
+\indent Neste trabalho o algoritmo K-means foi aplicado como uma técnica de divisão e agrupamento do tráfego de rede, para que se possa separar o tráfego normal do tráfego anômalo. Para a realização deste processo, pode-se selecionar somente alguns atributos que exercem maior influência sobre a caracterização do tráfego. Porém, o processo de agrupamento realizado pelo K-means não sofre influência pela quantidade de atributos, deste modo, podemos manter todos os atributos da base, eliminando na fase de treinamento somente o atributo que indica a assinatura do tráfego.
+
+\indent O problema do K-means durante a escolha dos centros iniciais é resolvido com a utilização do K-means++ \cite{arthur2007} que é utilizado de maneira padrão na biblioteca empregada para a execução do algoritmo, e espalha os centros iniciais pela base de dados.
+
+\begin{figure}[!h]
+\centering
+\includegraphics[width = 11cm, height = 8cm]{figuras/kmeans++.png}
+\caption{\scriptsize{Distribuição dos centros inicias com Kmeans++.}}
+\end{figure}
+
+\indent Primeiramente, o algoritmo escolhe o primeiro centro de forma randômica, depois, é calculada a distância de cada ponto $x$ em relação ao centro já escolhido. E então, é escolhido como o próximo centroide o objeto que possuir a probabilidade proporcional à distância $D(x)^{2}$. Deste modo, os centros inciais são distribuídos nos pontos extremos da base de dados, impossibilitando que iniciem próximos e em um mesmo grupo.
+
+\indent A representação da aplicação do Kmeans++ é demonstrada na Figura 2, no qual, o centro C1 é escolhido randômicamente, C2 é escolhido por ter a maior distância em relação ao C1 e C3 é escolhido por ter a maior distância de C2.
+
+\indent No experimento 1, é apresentado o funcionamento do algoritmo, onde  é realizada a clusterização em uma base de testes contendo três tipos de tráfego: normal e os ataques do tipo \textit{neptune} e \textit{back}, sendo representados respectivamente pelos grupos 1, 2 e 3. Este experimento também é utilizado como fase de treinamento, obtendo-se os seus centros finais para serem utilizados como centro iniciais em outras clusterizações.
+  
+\begin{figure}[!h]
+\centering
+\includegraphics[width = 13cm, height = 10cm]{figuras/exp1.png}
+\caption{\scriptsize{Experimento 1.}}
+\end{figure}
+
+\begin{figure}[!h]
+\centering
+\includegraphics[width = 14cm, height = 8cm]{figuras/densidade2.png}
+\caption{\scriptsize{Densidade de elementos do experimento 1.}}
+\end{figure}
+  
+\newpage
+
+\indent No experimento 2 é utilizado o treinamento realizado na clusterização anterior, deste modo, os seus centros finais são aplicados como centros iniciais no experimeto 2, em que os dados estão distribuídos aleatóriamente na base. Diferente do que é realizado no experimento 1, onde os dados foram alocados ordenadamente na base de dados.
+
+\begin{figure}[!h]
+\centering
+\includegraphics[width = 13cm, height = 10cm]{figuras/aleatorio1.png}
+\caption{\scriptsize{Experimento 2.}}
+\end{figure}
+
+\begin{figure}[!h]
+\centering
+\includegraphics[width = 14cm, height = 8cm]{figuras/densidade1.png}
+\caption{\scriptsize{Densidade de elementos do experimento 2.}}
+\end{figure}
+
+\indent Nota-se que a clusterização não ocorre como no primeiro experimento, e alguns elementos dos grupos 2 e 3 são alocados ao grupo 1. Nota-se também que há uma grande quantidade de elementos do grupo 1 e 2 que possuem distâncias semelhantes.
+
+\indent Pode-se analisar também a densidade e quantidade de elementos nos três grupos do experimento 1 na Figura 4 e do experimento 2 na Figura 6, sendo possível vizualizar a rescpectiva linha de cada vetor de conexão e suas intercalações na base de dados.
+
+\newpage
+    \section{Resultados}
