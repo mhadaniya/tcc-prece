@@ -9,12 +9,13 @@
 \usepackage[portuguese, ruled, linesnumbered]{algorithm2e}
 \usepackage{graphicx}
 \usepackage[alf]{abntex2cite}
-\usepackage{mdframed}
 \include{referencias.bib}
+
+
 \graphicspath{figuras/}
 
 
-\titulo{Detecção de Anomalias em Redes: Taxonomia de técnicas e um Estudo de Caso%Adicionar título da sua monografia%
+\titulo{DETECÇÃO DE ANOMALIAS EM REDES DE COMPUTADORES ATRAVÉS DA APLICAÇÃO DO ALGORITMO K-MEANS%Adicionar título da sua monografia%
 }
 \autor{Bruno Prece da Silva%Adicionar seu nome%
 }
@@ -74,6 +75,15 @@
 \clearpage
 %%%%% lista tabela
 
+\newpage
+%\pdfbookmark[1]{Algo}{loa}
+\listofalgorithms
+\clearpage
+
+%\pdfbookmark[0]{\listfigurename}{lof}
+%\listoffigures*
+%\cleardoublepage
+
 \include{./pretextual/siglas}
 
 \tableofcontents*
@@ -92,6 +102,7 @@
 %\listoffigures*
 %\cleardoublepage
 
+
 \textual
 
 \renewcommand{\ABNTEXchapterfont}{\fontfamily{cmr}\fontseries{b}\selectfont}
@@ -109,38 +120,7 @@
 \include{./capitulos/cap04conclusao}
 
 %%Colocar as referências conforme as normas da ABNT, somente as utilizadas no trabalho e presentes neste manuscrito.
-
 \bibliography{references}{}
 
-% \begin{thebibliography}{99}
-%
-% \bibitem{MONOWAR et al:2014}
-% {ABNTEX2; ARAUJO, L. C. \textbf{A classe abntex2}: Documentos técnicos e científicos brasileiros compatíveis com as normas ABNT. Sine loco, v. 1.9.2; 2014.}.
-%
-% \bibitem{Biazin:2008}
-% {BIAZIN, D. T. \textbf{Normas da ABNT e padronização de trabalhos acadêmicos}. Londrina: Instituto Filadélfia de Londrina; 2008.}
-%
-% \bibitem{Buneman:2011}
-% {BUNEMAN, P.; CHENEY, J.; LINDLEY, S. et al. \textbf{DBWiki}: A Structured Wiki for Curated Data and Collaborative Data Management. Athens: SIGMOD’11; 2011.}
-%
-% \bibitem{Wikibooks:2014}
-% {WIKIBOOKS. \textbf{LaTeX}: The Free Textbook Project. Disponível em: <http://en.wikibooks.org/wiki/LaTeX>. Acesso em: 09 abr. 2014.}
-%
-% \bibitem{ABNTEX2:2014}
-% {ABNTEX2; ARAUJO, L. C. \textbf{A classe abntex2}: Documentos técnicos e científicos brasileiros compatíveis com as normas ABNT. Sine loco, v. 1.9.2; 2014.}.
-%
-% \bibitem{ABNTEX2:2014}
-% {ABNTEX2; ARAUJO, L. C. \textbf{A classe abntex2}: Documentos técnicos e científicos brasileiros compatíveis com as normas ABNT. Sine loco, v. 1.9.2; 2014.}.
-%
-% \bibitem{ABNTEX2:2014}
-% {ABNTEX2; ARAUJO, L. C. \textbf{A classe abntex2}: Documentos técnicos e científicos brasileiros compatíveis com as normas ABNT. Sine loco, v. 1.9.2; 2014.}.
-%
-% \bibitem{ABNTEX2:2014}
-% {ABNTEX2; ARAUJO, L. C. \textbf{A classe abntex2}: Documentos técnicos e científicos brasileiros compatíveis com as normas ABNT. Sine loco, v. 1.9.2; 2014.}.
-%
-% \bibitem{ABNTEX2:2014}
-% {ABNTEX2; ARAUJO, L. C. \textbf{A classe abntex2}: Documentos técnicos e científicos brasileiros compatíveis com as normas ABNT. Sine loco, v. 1.9.2; 2014.}.
-%
-% \end{thebibliography}
 
 \end{document}
