@@ -15,7 +15,7 @@
 \begin{tabular}{|r|l|r|l|}
 \hline
 \textbf{Nº} & \textbf{Nome do Atributo} & \textbf{Nº} & \textbf{Nome do Atributo} \\
-\hline                               
+\hline
 1 & Duration 	  & 22 & Count \\
 \hline
 2 & Protocol\_type & 23 & Srv\_count \\
@@ -125,7 +125,7 @@ ICMP & 2\\
 \label{tab4}
 \end{table}
 
-\indent Após a etapa de categorização, ainda há dados com diferentes ordem de grandezas e unidades de medidas diferentes, tal como, valores reais e valores inteiros que ultrapassam quarenta mil. Em testes empíricos aplicando o K-means na base de dados em que apenas foi realizada a categorização dos dados, a clusterização foi realizada normalmente, porém, os resultados não foram os esperados.
+\indent Após a etapa de categorização, ainda há dados com diferentes ordem de grandezas e unidades de medidas diferentes, tal como, valores reais e valores inteiros que ultrapassam quarenta mil. Em testes empíricos aplicando o K-means na base de dados em que apenas foi realizada a categorização dos dados, a clusterização foi realizada normalmente, porém, os resultados não saíram como esperado.
 
 \indent Para realização destes testes, foi elaborada uma base contendo apenas cinquenta vetores de conexão de tráfego normal e cinquenta vetores de um ataque \textit{smurf}. Estes dados foram retirados da própria KDD99 e mantiveram a mesma sequência em que estavam originalmente alocados. Os testes realizados com apenas estes dois grupos, revelaram que os vetores que continham valores muito altos em suas portas de destino, independente de ser do tipo normal ou \textit{smurf}, eram alocados em um grupo muito pequeno que continha em média três objetos. Enquanto o segundo grupo obtinha em média os outros noventa e sete vetores de conexão. Por isso, fez se necessário realizar a normalização para homogenizar os dados em uma mesma escala de valores.
 
@@ -152,7 +152,6 @@ atributo[i][j]' = \frac{atributo[i][j] - min[j]}{\Delta j}
 \noindent o valor normalizado do atributo é representado por $ atributo' $, enquanto o valor inicial é representado por $ atributo $. Na tabela~\ref{tab3} é apresentado um mesmo vetor de conexão antes e após a normalização.
 
 
-
   \section{Clusterização do Tráfego}
 
 \indent Neste trabalho o algoritmo K-means foi aplicado como uma técnica de divisão e agrupamento do tráfego de rede, para que se possa separar o tráfego normal do tráfego anômalo. Para a realização deste processo, pode-se selecionar somente alguns atributos que exercem maior influência sobre a caracterização do tráfego. Porém, o processo de agrupamento realizado pelo K-means não sofre influência pela quantidade de atributos, deste modo, podemos manter todos os atributos da base, eliminando na fase de testes somente o atributo que indica a assinatura do tráfego.
@@ -170,8 +169,8 @@ atributo[i][j]' = \frac{atributo[i][j] - min[j]}{\Delta j}
 
 \indent A representação da aplicação do Kmeans++ é demonstrada na figura~\ref{fig2}, no qual, o centro C1 é escolhido randomicamente, C2 é escolhido por ter a maior distância em relação ao C1 e C3 é escolhido por ter a maior distância de C2.
 
-\indent No experimento 1 na figura~\ref{fig3}, é apresentado o funcionamento do algoritmo K-means, onde,  é realizada a clusterização em uma base contendo três tipos de tráfego: normal e os ataques do tipo \textit{smurf} e \textit{teardrop}, sendo representados respectivamente pelos grupos 1, 2 e 3. Este experimento também é utilizado como fase de treinamento, obtendo-se os seus centros finais para serem utilizados como centro iniciais em outras clusterizações.
-  
+\indent No experimento 1 na figura~\ref{fig3}, é apresentado o funcionamento do algoritmo K-means, onde, é realizada a clusterização em uma base contendo três tipos de tráfego: normal e os ataques do tipo \textit{smurf} e \textit{teardrop}, sendo representados respectivamente pelos grupos 1, 2 e 3. Este experimento também é utilizado como fase de treinamento, obtendo-se os seus centros finais para serem utilizados como centro iniciais em outras clusterizações.
+
 \begin{figure}[!h]
 \centering
 \includegraphics[width = 13cm, height = 10cm]{figuras/exp1.png}
@@ -185,7 +184,7 @@ atributo[i][j]' = \frac{atributo[i][j] - min[j]}{\Delta j}
 \caption{\scriptsize{Densidade de elementos do experimento 1.}}
 \label{fig4}
 \end{figure}
-  
+
 \newpage
 
 \indent A fase de testes é representada pelo experimento 2 na figura~\ref{exp2}, onde os centros obtidos na fase de treinamento, são reutilizados como centros iniciais. Nesta fase os dados estão distribuídos randomicamente na base, diferente do que ocorre no experimento da figura~\ref{fig3}, em que os dados foram alocados ordenadamente.
@@ -212,7 +211,7 @@ atributo[i][j]' = \frac{atributo[i][j] - min[j]}{\Delta j}
 
 \indent Por possuirmos a correta rotulagem dos dados, é possível realizar a aplicação de métodos que avaliem o desempenho e a generalização dos modelos de treinamento utilizados para a clusterização dos dados \cite{Tan2005}.
 
-\indent O método de \textit{Cross Validation} permite a avaliação dos modelos de treinamento utilizado para definição dos centros iniciais dos novos \textit{clusters} na fase de testes. Também permite calcular as taxas de acertos e de erros resultados da aplicação do algoritmo. O método consiste na divisão da base de dados em \textit{K} partes que possuam aproximadamente o mesmo número de elementos. O subconjunto de treinamento é constituído de \textit{K} - 1 partes e o subconjunto de testes é composto pela parcela restante dos dados. A operação deve ser realizada \textit{K} vezes, de um modo que todas as partes tenham sido utilizadas no subconjunto de testes.
+\indent O método de \textit{Cross Validation} permite a avaliação dos modelos de treinamento utilizado para definição dos centros iniciais dos novos \textit{clusters} na fase de testes. Também permite calcular as taxas de acertos e de erros da aplicação do algoritmo. O método consiste na divisão da base de dados em \textit{K} partes que possuam aproximadamente o mesmo número de elementos. O subconjunto de treinamento é constituído de \textit{K} - 1 partes e o subconjunto de testes é composto pela parcela restante dos dados. A operação deve ser realizada \textit{K} vezes, de um modo que todas as partes tenham sido utilizadas no subconjunto de testes.
 
 \indent O conjunto de dados utilizado para os experimentos de \textit{Cross Validation} será assim como o utilizado no experimento 2, com a mesma quantidade de vetores de conexão e a distribuição randômica dos dados. Além disso, será utilizado o valor de \textit{K} = 3, onde, os subconjuntos de treinamento serão compostos por 2/3 dos dados e os subconjuntos de teste serão compostos por 1/3 do total de dados, variando em cada iteração.
 
@@ -268,7 +267,7 @@ atributo[i][j]' = \frac{atributo[i][j] - min[j]}{\Delta j}
 
 \indent As taxas apresentadas na tabela~\ref{tabela6}, são referentes à validação do experimento 2, um caso em que houve solução ótima do agrupamento. Em todas as iterações do \textit{cross validation} todos os elementos foram classificados corretamente . Isso ocorre devido à grande quantidade de atributos com valores e padrões díspares entre o tráfego normal e os ataques \textit{smurf} e \textit{teardrop}. Como, por exemplo, os protocolos de aplicação e de transporte e a quantidade de \textit{bytes} enviados, que assim como outros atributos, mantêm um valor contínuo nos ataques, enquanto são variantes no tráfego normal.
 
-\indent Ao utilizar o tráfego normal juntamente com os ataques \textit{neptune} e \textit{back} em uma base de mesmas dimensões como foi utilizada na validação anterior, há uma situação em que os atributos de cada tipo de tráfego possuem muitas características semelhantes, propiciando uma situação em que o algoritmo consegue reconhecer alguns elementos de cada grupo, mas não possui tamanha exatidão como na validação anterior. 
+\indent Ao utilizar o tráfego normal juntamente com os ataques \textit{neptune} e \textit{back} em uma base de mesmas dimensões como foi utilizada na validação anterior, há uma situação em que os atributos de cada tipo de tráfego possuem muitas características semelhantes, propiciando uma situação em que o algoritmo consegue reconhecer alguns elementos de cada grupo, mas não possui tamanha exatidão como na validação anterior.
 
 \begin{table}[h]
 \centering
@@ -313,8 +312,3 @@ atributo[i][j]' = \frac{atributo[i][j] - min[j]}{\Delta j}
 \indent Apesar da utilização dos mesmos tipos de tráfego da validação da tabela~\ref{tabela6}, nota-se grande diferença nos resultados apresentados na tabela~\ref{tabela7}. Devido à maior quantidade de elementos normais, há uma boa diminuição nas taxas de falsos positivos em relação à validação anterior. Porém, o algoritmo também detecta uma menor quantidade de verdadeiros positivos. Além disso, nesta validação, a primeira etapa obteve um desempenho muito inferior em relação às outras duas etapa, que apresentaram resultados aproximados.
 
 \indent Estes experimentos indicam que o algoritmo foi capaz de classificar acima de 59\% dos elementos do tráfego em seus grupos corretamente, tanto com uma base de dimensões menores, quanto com uma base semelhante à uma série temporal de tráfego real. Os experimentos da tabela~\ref{tabela6} e da tabela~\ref{tabela7} envolvem uma situação onde as características do tráfego normal são muito semelhante ao tráfego anômalo. Além disto, o tráfego anômalo é composto por dois tipos de ataques de negação de serviço muito similares, o que propiciou uma situação desvantajosa para o algoritmo e causou um menor desempenho do agrupamento.
-
-
-
-
-
